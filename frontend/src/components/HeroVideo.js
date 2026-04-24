@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Mail } from "lucide-react";
-import { FalconMark, Wordmark, Tagline } from "./LogoMark";
+import { FalconMark, Wordmark, Tagline, PrimaryLockup } from "./LogoMark";
 
 // Stable, royalty-free Pexels stock video (NZ-feel mountain/drone aerials)
 const VIDEO_SOURCES = [
@@ -87,25 +87,16 @@ const HeroVideo = () => {
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="flex items-center gap-3"
+            className="flex items-center"
           >
-            <FalconMark size={56} />
-            <Wordmark size="lg" />
-          </motion.div>
-
-          <motion.div
-            {...fadeUp}
-            transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-6"
-          >
-            <Tagline />
+            <PrimaryLockup height={230} className="drop-shadow-[0_20px_50px_rgba(0,0,0,0.45)]" />
           </motion.div>
 
           <motion.h1
             {...fadeUp}
             transition={{ duration: 0.75, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             data-testid="hero-headline"
-            className="mt-8 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-[-0.01em]"
+            className="mt-10 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-[-0.01em]"
             style={{ color: "var(--l44-white)" }}
           >
             Precision digital solutions
