@@ -103,5 +103,16 @@ Meta tags required:
 ## Status
 - [x] Requirements gathered
 - [x] Plan created
-- [ ] Phase 2 — Full build
-- [ ] Phase 3 — Testing & delivery
+- [x] Phase 2 — Full build (backend + frontend complete)
+- [x] Phase 3 — Testing & delivery (100% backend, 98% frontend; all user stories pass)
+
+## Test Results (iteration 1)
+- Backend: **100% pass** — All endpoints working, graceful SendGrid fallback, 422 validation on bad input, MongoDB persistence confirmed.
+- Frontend: **98% pass** — All sections render; slider, contact form, mobile menu, SEO elements verified.
+- Only minor note (LOW priority): meta description Canterbury prominence — addressed.
+
+## Post-delivery Notes
+- SendGrid currently **not sending emails** (SENDGRID_API_KEY is empty). Submissions are safely stored in MongoDB (`contact_submissions` collection) and can be listed via `GET /api/contact-submissions`. Once you provide a verified sender + API key, set `SENDGRID_API_KEY` in `/app/backend/.env` and restart backend (`sudo supervisorctl restart backend`).
+- Video background uses Pexels stock with a poster fallback image; both are served over HTTPS.
+- Favicon is a custom SVG derived from the falcon + mountain / lightning concept.
+
