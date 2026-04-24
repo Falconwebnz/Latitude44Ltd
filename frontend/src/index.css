@@ -2,14 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== Latitude44 brand tokens ===== */
+:root {
+    --l44-navy: #0a1a2a;
+    --l44-gold: #c8a25a;
+    --l44-gray: #e6e6e6;
+    --l44-white: #ffffff;
+
+    --l44-navy-veil-50: rgba(10, 26, 42, 0.5);
+    --l44-navy-veil-70: rgba(10, 26, 42, 0.7);
+    --l44-navy-veil-85: rgba(10, 26, 42, 0.85);
+    --l44-navy-veil-92: rgba(10, 26, 42, 0.92);
+
+    --l44-gold-08: rgba(200, 162, 90, 0.08);
+    --l44-gold-10: rgba(200, 162, 90, 0.1);
+    --l44-gold-18: rgba(200, 162, 90, 0.18);
+    --l44-gold-28: rgba(200, 162, 90, 0.28);
+
+    --l44-white-85: rgba(255, 255, 255, 0.85);
+    --l44-white-70: rgba(255, 255, 255, 0.7);
+    --l44-white-55: rgba(255, 255, 255, 0.55);
+    --l44-white-10: rgba(255, 255, 255, 0.1);
+
+    --l44-border-hairline: rgba(230, 230, 230, 0.14);
+    --l44-border-hairline-strong: rgba(230, 230, 230, 0.22);
+    --l44-border-gold-hairline: rgba(200, 162, 90, 0.3);
+
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.35);
+    --shadow-gold-glow:
+        0 0 0 1px rgba(200, 162, 90, 0.24), 0 18px 50px rgba(0, 0, 0, 0.45);
+
+    --section-py: clamp(3.5rem, 6vw, 6rem);
+    --card-pad: clamp(1rem, 2.2vw, 1.5rem);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
+    background-color: var(--l44-navy);
+    color: var(--l44-white);
     font-family:
-        -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-        sans-serif;
+        "Montserrat", ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 code {
@@ -17,59 +58,35 @@ code {
         source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+::selection {
+    background: var(--l44-gold);
+    color: var(--l44-navy);
+}
+
+/* shadcn token mapping into the Latitude44 palette */
 @layer base {
     :root {
-        --background: 0 0% 100%;
-        --foreground: 0 0% 3.9%;
-        --card: 0 0% 100%;
-        --card-foreground: 0 0% 3.9%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 0 0% 3.9%;
-        --primary: 0 0% 9%;
-        --primary-foreground: 0 0% 98%;
-        --secondary: 0 0% 96.1%;
-        --secondary-foreground: 0 0% 9%;
-        --muted: 0 0% 96.1%;
-        --muted-foreground: 0 0% 45.1%;
-        --accent: 0 0% 96.1%;
-        --accent-foreground: 0 0% 9%;
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 0 0% 89.8%;
-        --input: 0 0% 89.8%;
-        --ring: 0 0% 3.9%;
-        --chart-1: 12 76% 61%;
-        --chart-2: 173 58% 39%;
-        --chart-3: 197 37% 24%;
-        --chart-4: 43 74% 66%;
-        --chart-5: 27 87% 67%;
-        --radius: 0.5rem;
-    }
-    .dark {
-        --background: 0 0% 3.9%;
-        --foreground: 0 0% 98%;
-        --card: 0 0% 3.9%;
-        --card-foreground: 0 0% 98%;
-        --popover: 0 0% 3.9%;
-        --popover-foreground: 0 0% 98%;
-        --primary: 0 0% 98%;
-        --primary-foreground: 0 0% 9%;
-        --secondary: 0 0% 14.9%;
-        --secondary-foreground: 0 0% 98%;
-        --muted: 0 0% 14.9%;
-        --muted-foreground: 0 0% 63.9%;
-        --accent: 0 0% 14.9%;
-        --accent-foreground: 0 0% 98%;
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 0 0% 14.9%;
-        --input: 0 0% 14.9%;
-        --ring: 0 0% 83.1%;
-        --chart-1: 220 70% 50%;
-        --chart-2: 160 60% 45%;
-        --chart-3: 30 80% 55%;
-        --chart-4: 280 65% 60%;
-        --chart-5: 340 75% 55%;
+        /* map shadcn tokens to our brand (dark by default) */
+        --background: 210 61% 10%; /* navy */
+        --foreground: 0 0% 100%; /* white */
+        --card: 210 61% 10%;
+        --card-foreground: 0 0% 100%;
+        --popover: 210 61% 10%;
+        --popover-foreground: 0 0% 100%;
+        --primary: 37 48% 57%; /* gold */
+        --primary-foreground: 210 61% 10%;
+        --secondary: 210 40% 18%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 210 30% 16%;
+        --muted-foreground: 0 0% 70%;
+        --accent: 37 48% 57%;
+        --accent-foreground: 210 61% 10%;
+        --destructive: 0 72% 51%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 0 0% 90% / 0.14;
+        --input: 0 0% 90% / 0.14;
+        --ring: 37 48% 57%;
+        --radius: 0.75rem;
     }
 }
 
@@ -79,6 +96,13 @@ code {
     }
     body {
         @apply bg-background text-foreground;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        letter-spacing: -0.01em;
     }
 }
 
@@ -111,5 +135,101 @@ code {
         border-right-color: inherit;
         border-top-color: inherit;
         border-bottom-color: inherit;
+    }
+}
+
+/* ====== Utility helpers ====== */
+.l44-container {
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+@media (min-width: 640px) {
+    .l44-container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+.l44-section {
+    padding-top: var(--section-py);
+    padding-bottom: var(--section-py);
+}
+
+.l44-hairline {
+    border-top: 1px solid var(--l44-border-hairline);
+}
+
+.l44-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--l44-white-70);
+}
+
+.l44-gold-rule {
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    background: var(--l44-gold);
+    vertical-align: middle;
+    margin-right: 0.75rem;
+}
+
+/* Subtle dotted grid/noise background using CSS only */
+.l44-noise {
+    position: relative;
+}
+.l44-noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(
+        rgba(255, 255, 255, 0.035) 1px,
+        transparent 1px
+    );
+    background-size: 3px 3px;
+    opacity: 0.55;
+    mix-blend-mode: screen;
+}
+
+/* Swiper tweaks for the services image slider */
+.swiper-pagination-bullet {
+    background: var(--l44-white-55) !important;
+    opacity: 1 !important;
+    transition:
+        background-color 0.25s ease,
+        width 0.25s ease;
+}
+.swiper-pagination-bullet-active {
+    background: var(--l44-gold) !important;
+    width: 22px !important;
+    border-radius: 9999px !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--l44-gold) !important;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+}
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
     }
 }
