@@ -1,0 +1,42 @@
+[
+  {
+    "content": "Phase 2: Get SendGrid integration playbook",
+    "status": "in_progress"
+  },
+  {
+    "content": "Phase 2: Get design guidelines from design_agent",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Backend - contact API with SendGrid + MongoDB storage",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Frontend - SEO meta, SVG favicon, Montserrat",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Frontend - Hero with video background + Logo",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Frontend - Image Slider (3 images)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Frontend - Services (7 cards)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Frontend - Contact form + footer",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 3: End to end testing with testing_agent_v3",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 3: Fix issues & deliver",
+    "status": "pending"
+  }
+]
