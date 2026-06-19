@@ -233,3 +233,50 @@ code {
         transition-duration: 0.001ms !important;
     }
 }
+
+/* ===================================================================
+   Ken Burns slideshow keyframes (WorkShowcase)
+   Each preset slowly pans + zooms an active slide to give a cinematic
+   feel. All five run for the same duration so transitions stay synced.
+   =================================================================== */
+@keyframes kb-tl-to-br {
+    0%   { transform: scale(1.02) translate3d(-2%, -1.5%, 0); }
+    100% { transform: scale(1.16) translate3d( 1.5%,  1.5%, 0); }
+}
+@keyframes kb-br-to-tl {
+    0%   { transform: scale(1.18) translate3d( 2%,  1.5%, 0); }
+    100% { transform: scale(1.02) translate3d(-1.5%, -1%, 0); }
+}
+@keyframes kb-tr-to-bl {
+    0%   { transform: scale(1.02) translate3d( 2%, -1.5%, 0); }
+    100% { transform: scale(1.18) translate3d(-2%,  1.5%, 0); }
+}
+@keyframes kb-bl-to-tr {
+    0%   { transform: scale(1.18) translate3d(-2%,  1.5%, 0); }
+    100% { transform: scale(1.02) translate3d( 2%, -1%, 0); }
+}
+@keyframes kb-center-zoom {
+    0%   { transform: scale(1.00); }
+    100% { transform: scale(1.18); }
+}
+
+.kb-tl-to-br {
+    animation: kb-tl-to-br 9s cubic-bezier(0.33, 0.0, 0.4, 1) forwards;
+    will-change: transform;
+}
+.kb-br-to-tl {
+    animation: kb-br-to-tl 9s cubic-bezier(0.33, 0.0, 0.4, 1) forwards;
+    will-change: transform;
+}
+.kb-tr-to-bl {
+    animation: kb-tr-to-bl 9s cubic-bezier(0.33, 0.0, 0.4, 1) forwards;
+    will-change: transform;
+}
+.kb-bl-to-tr {
+    animation: kb-bl-to-tr 9s cubic-bezier(0.33, 0.0, 0.4, 1) forwards;
+    will-change: transform;
+}
+.kb-center-zoom {
+    animation: kb-center-zoom 9s cubic-bezier(0.33, 0.0, 0.4, 1) forwards;
+    will-change: transform;
+}
