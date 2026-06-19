@@ -23,18 +23,31 @@ export const FalconMark = ({ size = 48, className = "", alt = "Latitude44" }) =>
   />
 );
 
-/** Full lockup (icon + LATITUDE44 wordmark + tagline), white/gold for dark bg. */
-export const PrimaryLockup = ({ className = "", height = 220, alt = "Latitude44 — Digital Solutions. Precision. Performance." }) => (
-  <img
-    src="/brand/latitude44_primary_lockup_light.png"
-    alt={alt}
-    height={height}
-    className={className}
-    style={{ height, width: "auto", display: "block" }}
-    loading="eager"
-    decoding="async"
-  />
-);
+/** Full lockup (icon + LATITUDE44 wordmark + tagline), white/gold for dark bg.
+ *  Pass `height` for a fixed pixel size, OR omit it and control via the
+ *  `className` (e.g. `w-full max-w-[480px] h-auto`) for fluid layouts.
+ */
+export const PrimaryLockup = ({
+  className = "",
+  height,
+  alt = "Latitude44 — Digital Solutions. Precision. Performance.",
+}) => {
+  const inlineStyle =
+    height != null
+      ? { height, width: "auto", display: "block" }
+      : { display: "block", maxWidth: "100%", height: "auto" };
+  return (
+    <img
+      src="/brand/latitude44_primary_lockup_light.png"
+      alt={alt}
+      {...(height != null ? { height } : {})}
+      className={className}
+      style={inlineStyle}
+      loading="eager"
+      decoding="async"
+    />
+  );
+};
 
 /** Wordmark only: LATITUDE44 + tagline (white/gold). */
 export const Wordmark = ({ className = "", size = "md" }) => {

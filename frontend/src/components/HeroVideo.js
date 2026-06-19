@@ -82,97 +82,111 @@ const HeroVideo = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 min-h-[100svh] pt-28 pb-20 flex items-center">
-        <div className="w-full max-w-3xl">
-          <motion.div
-            {...fadeUp}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="flex items-center"
-          >
-            <PrimaryLockup height={230} className="drop-shadow-[0_20px_50px_rgba(0,0,0,0.45)]" />
-          </motion.div>
-
-          <motion.a
-            {...fadeUp}
-            transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            href="#claude-learn"
-            data-testid="hero-claude-learn-chip"
-            className="mt-8 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[11px] sm:text-xs font-semibold tracking-[0.18em] uppercase w-fit transition-[background-color,border-color] duration-200"
-            style={{
-              border: "1px solid var(--l44-border-gold-hairline)",
-              background: "var(--l44-gold-10)",
-              color: "var(--l44-white)",
-            }}
-          >
-            <span
-              aria-hidden
-              className="inline-block h-1.5 w-1.5 rounded-full"
-              style={{ background: "var(--l44-gold)" }}
-            />
-            <span style={{ color: "var(--l44-gold)" }}>New</span>
-            <span>· Claude Learn — launching soon</span>
-            <span aria-hidden style={{ color: "var(--l44-gold)" }}>→</span>
-          </motion.a>
-
-          <motion.h1
-            {...fadeUp}
-            transition={{ duration: 0.75, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            data-testid="hero-headline"
-            className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-[-0.01em]"
-            style={{ color: "var(--l44-white)" }}
-          >
-            Precision digital solutions
-            <span style={{ color: "var(--l44-gold)" }}>.</span>
-            <br />
-            Engineered in New Zealand.
-          </motion.h1>
-
-          <motion.p
-            {...fadeUp}
-            transition={{ duration: 0.7, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-6 max-w-xl text-sm sm:text-base leading-relaxed"
-            style={{ color: "var(--l44-white-85)" }}
-          >
-            Latitude44 builds fast, reliable web and app products, integrates modern AI,
-            and rescues critical data — from old 3.5″ floppy disks and VHS to failing
-            hard drives. Based in Rangiora, Canterbury. Serving all of New Zealand.
-          </motion.p>
-
-          <motion.div
-            {...fadeUp}
-            transition={{ duration: 0.7, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-10 flex flex-col sm:flex-row gap-3"
-          >
-            <a
-              href="#contact"
-              data-testid="hero-primary-cta"
-              className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase whitespace-nowrap transition-[background-color,box-shadow] duration-200"
-              style={{ background: "var(--l44-gold)", color: "var(--l44-navy)" }}
-            >
-              Start a Project
-              <ArrowRight size={16} />
-            </a>
-            <a
-              href="#services"
-              data-testid="hero-secondary-cta"
-              className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-xs sm:text-sm font-medium tracking-[0.2em] uppercase whitespace-nowrap border transition-colors duration-200"
+      <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 min-h-[100svh] pt-28 pb-20 flex items-center">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center">
+          {/* Text column */}
+          <div className="lg:col-span-7 xl:col-span-7 order-2 lg:order-1 max-w-3xl xl:max-w-[760px]">
+            <motion.a
+              {...fadeUp}
+              transition={{ duration: 0.55, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+              href="#claude-learn"
+              data-testid="hero-claude-learn-chip"
+              className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[11px] sm:text-xs font-semibold tracking-[0.18em] uppercase w-fit transition-[background-color,border-color] duration-200"
               style={{
-                borderColor: "var(--l44-border-gold-hairline)",
+                border: "1px solid var(--l44-border-gold-hairline)",
+                background: "var(--l44-gold-10)",
                 color: "var(--l44-white)",
-                background: "var(--l44-gold-08)",
               }}
             >
-              Explore Services
-            </a>
-            <a
-              href="mailto:latitude44@protonmail.com"
-              data-testid="hero-email-link"
-              className="inline-flex items-center gap-2 text-xs sm:text-sm tracking-[0.14em] uppercase ml-0 sm:ml-2 sm:self-center"
+              <span
+                aria-hidden
+                className="inline-block h-1.5 w-1.5 rounded-full"
+                style={{ background: "var(--l44-gold)" }}
+              />
+              <span style={{ color: "var(--l44-gold)" }}>New</span>
+              <span>· Claude Learn — launching soon</span>
+              <span aria-hidden style={{ color: "var(--l44-gold)" }}>→</span>
+            </motion.a>
+
+            <motion.h1
+              {...fadeUp}
+              transition={{ duration: 0.75, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+              data-testid="hero-headline"
+              className="mt-6 text-4xl sm:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-semibold leading-[1.04] tracking-[-0.015em]"
+              style={{ color: "var(--l44-white)" }}
+            >
+              Precision digital solutions
+              <span style={{ color: "var(--l44-gold)" }}>.</span>
+              <br />
+              Engineered in New Zealand.
+            </motion.h1>
+
+            <motion.div
+              {...fadeUp}
+              transition={{ duration: 0.7, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6"
+            >
+              <Tagline />
+            </motion.div>
+
+            <motion.p
+              {...fadeUp}
+              transition={{ duration: 0.7, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 max-w-xl text-sm sm:text-base lg:text-lg leading-relaxed"
               style={{ color: "var(--l44-white-85)" }}
             >
-              <Mail size={14} />
-              latitude44@protonmail.com
-            </a>
+              Latitude44 builds fast, reliable web and app products, integrates modern AI,
+              and rescues critical data — from old 3.5″ floppy disks and VHS to failing
+              hard drives. Based in Rangiora, Canterbury. Serving all of New Zealand.
+            </motion.p>
+
+            <motion.div
+              {...fadeUp}
+              transition={{ duration: 0.7, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-10 flex flex-col sm:flex-row sm:flex-wrap gap-3 items-start sm:items-center"
+            >
+              <a
+                href="#contact"
+                data-testid="hero-primary-cta"
+                className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase whitespace-nowrap transition-[background-color,box-shadow] duration-200"
+                style={{ background: "var(--l44-gold)", color: "var(--l44-navy)" }}
+              >
+                Start a Project
+                <ArrowRight size={16} />
+              </a>
+              <a
+                href="#services"
+                data-testid="hero-secondary-cta"
+                className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-xs sm:text-sm font-medium tracking-[0.2em] uppercase whitespace-nowrap border transition-colors duration-200"
+                style={{
+                  borderColor: "var(--l44-border-gold-hairline)",
+                  color: "var(--l44-white)",
+                  background: "var(--l44-gold-08)",
+                }}
+              >
+                Explore Services
+              </a>
+              <a
+                href="mailto:latitude44@protonmail.com"
+                data-testid="hero-email-link"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm tracking-[0.14em] uppercase"
+                style={{ color: "var(--l44-white-85)" }}
+              >
+                <Mail size={14} />
+                latitude44@protonmail.com
+              </a>
+            </motion.div>
+          </div>
+
+          {/* Logo column — to the right on lg+, above text on mobile */}
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-5 xl:col-span-5 order-1 lg:order-2 flex justify-center lg:justify-end"
+          >
+            <PrimaryLockup
+              className="w-full max-w-[200px] sm:max-w-[260px] md:max-w-[320px] lg:max-w-[420px] xl:max-w-[500px] h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.45)]"
+            />
           </motion.div>
         </div>
       </div>

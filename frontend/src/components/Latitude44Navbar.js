@@ -43,7 +43,7 @@ const Latitude44Navbar = () => {
           <Wordmark size="sm" />
         </a>
 
-        <nav className="hidden md:flex items-center gap-8" aria-label="Primary">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Primary">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -71,7 +71,7 @@ const Latitude44Navbar = () => {
         <button
           type="button"
           data-testid="nav-mobile-menu-button"
-          className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-full border border-[color:var(--l44-border-hairline)] text-[color:var(--l44-white)]"
+          className="lg:hidden inline-flex items-center justify-center h-10 w-10 rounded-full border border-[color:var(--l44-border-hairline)] text-[color:var(--l44-white)]"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Toggle navigation"
           aria-expanded={mobileOpen}
@@ -82,7 +82,7 @@ const Latitude44Navbar = () => {
 
       {mobileOpen && (
         <div
-          className="md:hidden bg-[color:var(--l44-navy-veil-92)] backdrop-blur-md border-t border-[color:var(--l44-border-hairline)]"
+          className="lg:hidden bg-[color:var(--l44-navy-veil-92)] backdrop-blur-md border-t border-[color:var(--l44-border-hairline)]"
           data-testid="nav-mobile-panel"
         >
           <nav className="mx-auto max-w-6xl px-4 py-4 flex flex-col gap-2" aria-label="Mobile">
