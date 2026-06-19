@@ -50,8 +50,8 @@ const SiteFooter = () => {
               <a href="#home" className="hover:text-white" style={{ color: "var(--l44-white-85)" }}>
                 Home
               </a>
-              <a href="#work" className="hover:text-white" style={{ color: "var(--l44-white-85)" }}>
-                Work
+              <a href="#claude-learn" className="hover:text-white" style={{ color: "var(--l44-white-85)" }}>
+                Claude Learn
               </a>
               <a href="#services" className="hover:text-white" style={{ color: "var(--l44-white-85)" }}>
                 Services

@@ -5,7 +5,7 @@ import { Toaster } from "sonner";
 
 import Latitude44Navbar from "./components/Latitude44Navbar";
 import HeroVideo from "./components/HeroVideo";
-import ServicesSlider from "./components/ServicesSlider";
+import ClaudeLearnFeature from "./components/ClaudeLearnFeature";
 import ServicesGrid from "./components/ServicesGrid";
 import ContactSection from "./components/ContactSection";
 import SiteFooter from "./components/SiteFooter";
@@ -21,7 +21,7 @@ const Landing = () => {
       <Latitude44Navbar />
       <main>
         <HeroVideo />
-        <ServicesSlider />
+        <ClaudeLearnFeature />
         <ServicesGrid />
         <ContactSection />
       </main>

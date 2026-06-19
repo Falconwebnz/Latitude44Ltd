@@ -92,11 +92,33 @@ const HeroVideo = () => {
             <PrimaryLockup height={230} className="drop-shadow-[0_20px_50px_rgba(0,0,0,0.45)]" />
           </motion.div>
 
+          <motion.a
+            {...fadeUp}
+            transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            href="#claude-learn"
+            data-testid="hero-claude-learn-chip"
+            className="mt-8 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[11px] sm:text-xs font-semibold tracking-[0.18em] uppercase w-fit transition-[background-color,border-color] duration-200"
+            style={{
+              border: "1px solid var(--l44-border-gold-hairline)",
+              background: "var(--l44-gold-10)",
+              color: "var(--l44-white)",
+            }}
+          >
+            <span
+              aria-hidden
+              className="inline-block h-1.5 w-1.5 rounded-full"
+              style={{ background: "var(--l44-gold)" }}
+            />
+            <span style={{ color: "var(--l44-gold)" }}>New</span>
+            <span>· Claude Learn — launching soon</span>
+            <span aria-hidden style={{ color: "var(--l44-gold)" }}>→</span>
+          </motion.a>
+
           <motion.h1
             {...fadeUp}
             transition={{ duration: 0.75, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             data-testid="hero-headline"
-            className="mt-10 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-[-0.01em]"
+            className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-[-0.01em]"
             style={{ color: "var(--l44-white)" }}
           >
             Precision digital solutions

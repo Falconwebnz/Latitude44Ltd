@@ -4,7 +4,7 @@ import { FalconMark, Wordmark } from "./LogoMark";
 
 const navItems = [
   { label: "Home", href: "#home", testId: "nav-home-link" },
-  { label: "Work", href: "#work", testId: "nav-work-link" },
+  { label: "Claude Learn", href: "#claude-learn", testId: "nav-claude-learn-link" },
   { label: "Services", href: "#services", testId: "nav-services-link" },
   { label: "Contact", href: "#contact", testId: "nav-contact-link" },
 ];
