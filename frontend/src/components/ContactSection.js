@@ -57,7 +57,7 @@ const ContactSection = () => {
       const msg =
         err?.response?.data?.detail ||
         err?.response?.data?.message ||
-        "Something went wrong. Please try again or email admin@latitude44.co.nz directly.";
+        "Something went wrong. Please try again or email latitude44@protonmail.com directly.";
       toast.error(msg);
     } finally {
       setSubmitting(false);
@@ -89,7 +89,7 @@ const ContactSection = () => {
             className="text-sm sm:text-base leading-relaxed"
             style={{ color: "var(--l44-white-70)" }}
           >
-            Share a few details and we&apos;ll reply from <span style={{ color: "var(--l44-white)" }}>admin@latitude44.co.nz</span>. For data recovery enquiries, please note the media type (VHS, Super 8, 3.5&#8243; floppy, HDD/SSD).
+            Share a few details and we&apos;ll reply from <span style={{ color: "var(--l44-white)" }}>latitude44@protonmail.com</span>. For data recovery enquiries, please note the media type (VHS, Super 8, 3.5&#8243; floppy, HDD/SSD).
           </p>
         </motion.div>
 
@@ -252,13 +252,13 @@ const ContactSection = () => {
             >
               <span className="l44-eyebrow">Email</span>
               <a
-                href="mailto:admin@latitude44.co.nz"
+                href="mailto:latitude44@protonmail.com"
                 data-testid="contact-email-link"
-                className="mt-3 inline-flex items-center gap-3 text-base font-medium"
+                className="mt-3 inline-flex items-center gap-3 text-base font-medium break-all"
                 style={{ color: "var(--l44-white)" }}
               >
                 <span
-                  className="h-9 w-9 rounded-full inline-flex items-center justify-center"
+                  className="h-9 w-9 rounded-full inline-flex items-center justify-center flex-shrink-0"
                   style={{
                     border: "1px solid var(--l44-border-gold-hairline)",
                     background: "var(--l44-gold-10)",
@@ -268,7 +268,7 @@ const ContactSection = () => {
                 >
                   <Mail size={16} />
                 </span>
-                admin@latitude44.co.nz
+                latitude44@protonmail.com
               </a>
               <p className="mt-3 text-xs" style={{ color: "var(--l44-white-55)" }}>
                 We reply directly to the address you submit.
@@ -299,17 +299,17 @@ const ContactSection = () => {
                   <MapPin size={16} />
                 </span>
                 <address className="not-italic text-sm leading-relaxed" style={{ color: "var(--l44-white-85)" }}>
-                  Latitude44
+                  Latitude44 (NZ) Limited
                   <br />
-                  1 Terrace Road
+                  123 King Street
                   <br />
-                  Leithfield, Canterbury
+                  Rangiora, Canterbury 7400
                   <br />
                   New Zealand
                 </address>
               </div>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=1+Terrace+Road+Leithfield+Canterbury+New+Zealand"
+                href="https://www.google.com/maps/search/?api=1&query=123+King+Street+Rangiora+Canterbury+7400+New+Zealand"
                 target="_blank"
                 rel="noreferrer"
                 data-testid="contact-map-link"

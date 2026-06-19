@@ -27,20 +27,20 @@ const SiteFooter = () => {
           <div className="flex flex-col gap-2">
             <span className="l44-eyebrow">Contact</span>
             <a
-              href="mailto:admin@latitude44.co.nz"
+              href="mailto:latitude44@protonmail.com"
               data-testid="footer-email-link"
               className="text-sm"
               style={{ color: "var(--l44-white-85)" }}
             >
-              admin@latitude44.co.nz
+              latitude44@protonmail.com
             </a>
             <address
               className="not-italic text-sm leading-relaxed"
               style={{ color: "var(--l44-white-70)" }}
             >
-              1 Terrace Road, Leithfield
+              123 King Street, Rangiora
               <br />
-              Canterbury, New Zealand
+              Canterbury 7400, New Zealand
             </address>
           </div>
 
@@ -68,7 +68,7 @@ const SiteFooter = () => {
           style={{ borderTop: "1px solid var(--l44-border-hairline)" }}
         >
           <p className="text-xs" style={{ color: "var(--l44-white-55)" }}>
-            &copy; {year} Latitude44. All rights reserved.
+            &copy; {year} Latitude44 (NZ) Limited. All rights reserved.
           </p>
           <p className="text-[11px] tracking-[0.2em] uppercase" style={{ color: "var(--l44-white-55)" }}>
             latitude44.co.nz

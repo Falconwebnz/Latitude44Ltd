@@ -135,7 +135,7 @@ const HeroVideo = () => {
           >
             Latitude44 builds fast, reliable web and app products, integrates modern AI,
             and rescues critical data — from old 3.5″ floppy disks and VHS to failing
-            hard drives. Based in Leithfield, Canterbury. Serving all of New Zealand.
+            hard drives. Based in Rangiora, Canterbury. Serving all of New Zealand.
           </motion.p>
 
           <motion.div
@@ -165,13 +165,13 @@ const HeroVideo = () => {
               Explore Services
             </a>
             <a
-              href="mailto:admin@latitude44.co.nz"
+              href="mailto:latitude44@protonmail.com"
               data-testid="hero-email-link"
               className="inline-flex items-center gap-2 text-xs sm:text-sm tracking-[0.14em] uppercase ml-0 sm:ml-2 sm:self-center"
               style={{ color: "var(--l44-white-85)" }}
             >
               <Mail size={14} />
-              admin@latitude44.co.nz
+              latitude44@protonmail.com
             </a>
           </motion.div>
         </div>

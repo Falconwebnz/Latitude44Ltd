@@ -24,8 +24,8 @@ db = client[os.environ['DB_NAME']]
 
 # Email configuration
 SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY', '').strip()
-SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'admin@latitude44.co.nz').strip()
-ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL', 'admin@latitude44.co.nz').strip()
+SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'latitude44@protonmail.com').strip()
+ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL', 'latitude44@protonmail.com').strip()
 
 # Create the main app without a prefix
 app = FastAPI(title="Latitude44 API", version="1.0.0")
@@ -210,7 +210,7 @@ async def submit_contact(payload: ContactSubmissionCreate, background_tasks: Bac
         msg = "Thanks — your message has been sent. We'll be in touch shortly."
     elif not SENDGRID_API_KEY:
         # Still a success from user POV: submission is stored; admin will see it.
-        msg = "Thanks — your message has been received. We'll respond from admin@latitude44.co.nz."
+        msg = "Thanks — your message has been received. We'll respond from latitude44@protonmail.com."
     else:
         # Email failed but we stored the submission
         raise HTTPException(status_code=502, detail=f"Email delivery failed: {err}")
