@@ -1,32 +1,35 @@
 import { useEffect } from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Toaster } from "sonner";
 
 import Latitude44Navbar from "./components/Latitude44Navbar";
-import HeroVideo from "./components/HeroVideo";
-import ClaudeLearnFeature from "./components/ClaudeLearnFeature";
-import WorkShowcase from "./components/WorkShowcase";
-import ServicesGrid from "./components/ServicesGrid";
-import ContactSection from "./components/ContactSection";
 import SiteFooter from "./components/SiteFooter";
 
-const Landing = () => {
+import HomePage from "./pages/HomePage";
+import ClaudeLearnPage from "./pages/ClaudeLearnPage";
+import WorkPage from "./pages/WorkPage";
+import ServicesPage from "./pages/ServicesPage";
+import ContactPage from "./pages/ContactPage";
+import NotFoundPage from "./pages/NotFoundPage";
+
+// Scrolls to top whenever the route changes (best-practice for multi-page SPA).
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
   useEffect(() => {
-    // Ensure dark theme class is present (shadcn tokens are dark by default here)
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [pathname]);
+  return null;
+};
+
+const Layout = ({ children }) => {
+  useEffect(() => {
     document.documentElement.classList.add("dark");
   }, []);
-
   return (
-    <div className="App relative">
+    <div className="App relative min-h-screen flex flex-col">
       <Latitude44Navbar />
-      <main>
-        <HeroVideo />
-        <ClaudeLearnFeature />
-        <WorkShowcase />
-        <ServicesGrid />
-        <ContactSection />
-      </main>
+      <main className="flex-1">{children}</main>
       <SiteFooter />
       <Toaster
         theme="dark"
@@ -46,10 +49,17 @@ const Landing = () => {
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="*" element={<Landing />} />
-      </Routes>
+      <ScrollToTop />
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/claude-learn" element={<ClaudeLearnPage />} />
+          <Route path="/work" element={<WorkPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Layout>
     </BrowserRouter>
   );
 }

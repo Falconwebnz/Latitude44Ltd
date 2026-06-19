@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowRight, Mail } from "lucide-react";
-import { FalconMark, Wordmark, Tagline, PrimaryLockup } from "./LogoMark";
+import { Tagline, PrimaryLockup } from "./LogoMark";
 
 // Stable, royalty-free Pexels stock video (NZ-feel mountain/drone aerials)
 const VIDEO_SOURCES = [
@@ -86,27 +87,30 @@ const HeroVideo = () => {
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center">
           {/* Text column */}
           <div className="lg:col-span-7 xl:col-span-7 order-2 lg:order-1 max-w-3xl xl:max-w-[760px]">
-            <motion.a
+            <motion.div
               {...fadeUp}
               transition={{ duration: 0.55, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
-              href="#claude-learn"
-              data-testid="hero-claude-learn-chip"
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[11px] sm:text-xs font-semibold tracking-[0.18em] uppercase w-fit transition-[background-color,border-color] duration-200"
-              style={{
-                border: "1px solid var(--l44-border-gold-hairline)",
-                background: "var(--l44-gold-10)",
-                color: "var(--l44-white)",
-              }}
             >
-              <span
-                aria-hidden
-                className="inline-block h-1.5 w-1.5 rounded-full"
-                style={{ background: "var(--l44-gold)" }}
-              />
-              <span style={{ color: "var(--l44-gold)" }}>New</span>
-              <span>· Claude Learn — launching soon</span>
-              <span aria-hidden style={{ color: "var(--l44-gold)" }}>→</span>
-            </motion.a>
+              <Link
+                to="/claude-learn"
+                data-testid="hero-claude-learn-chip"
+                className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[11px] sm:text-xs font-semibold tracking-[0.18em] uppercase w-fit transition-[background-color,border-color] duration-200"
+                style={{
+                  border: "1px solid var(--l44-border-gold-hairline)",
+                  background: "var(--l44-gold-10)",
+                  color: "var(--l44-white)",
+                }}
+              >
+                <span
+                  aria-hidden
+                  className="inline-block h-1.5 w-1.5 rounded-full"
+                  style={{ background: "var(--l44-gold)" }}
+                />
+                <span style={{ color: "var(--l44-gold)" }}>New</span>
+                <span>· Claude Learn — launching soon</span>
+                <span aria-hidden style={{ color: "var(--l44-gold)" }}>→</span>
+              </Link>
+            </motion.div>
 
             <motion.h1
               {...fadeUp}
@@ -145,17 +149,17 @@ const HeroVideo = () => {
               transition={{ duration: 0.7, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
               className="mt-10 flex flex-col sm:flex-row sm:flex-wrap gap-3 items-start sm:items-center"
             >
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 data-testid="hero-primary-cta"
                 className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase whitespace-nowrap transition-[background-color,box-shadow] duration-200"
                 style={{ background: "var(--l44-gold)", color: "var(--l44-navy)" }}
               >
                 Start a Project
                 <ArrowRight size={16} />
-              </a>
-              <a
-                href="#services"
+              </Link>
+              <Link
+                to="/services"
                 data-testid="hero-secondary-cta"
                 className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-xs sm:text-sm font-medium tracking-[0.2em] uppercase whitespace-nowrap border transition-colors duration-200"
                 style={{
@@ -165,7 +169,7 @@ const HeroVideo = () => {
                 }}
               >
                 Explore Services
-              </a>
+              </Link>
               <a
                 href="mailto:latitude44@protonmail.com"
                 data-testid="hero-email-link"

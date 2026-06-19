@@ -21,7 +21,7 @@ const fadeUp = {
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const ContactSection = () => {
+const ContactSection = ({ embedded = false }) => {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
@@ -75,23 +75,25 @@ const ContactSection = () => {
       }}
     >
       <div className="l44-container">
-        <motion.div {...fadeUp} className="max-w-3xl mb-10 sm:mb-14 flex flex-col gap-3">
-          <span className="l44-eyebrow">
-            <span className="l44-gold-rule" /> Contact
-          </span>
-          <h2
-            className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-[-0.01em]"
-            style={{ color: "var(--l44-white)" }}
-          >
-            Tell us what you&apos;re building.
-          </h2>
-          <p
-            className="text-sm sm:text-base leading-relaxed"
-            style={{ color: "var(--l44-white-70)" }}
-          >
-            Share a few details and we&apos;ll reply from <span style={{ color: "var(--l44-white)" }}>latitude44@protonmail.com</span>. For data recovery enquiries, please note the media type (VHS, Super 8, 3.5&#8243; floppy, HDD/SSD).
-          </p>
-        </motion.div>
+        {!embedded && (
+          <motion.div {...fadeUp} className="max-w-3xl mb-10 sm:mb-14 flex flex-col gap-3">
+            <span className="l44-eyebrow">
+              <span className="l44-gold-rule" /> Contact
+            </span>
+            <h2
+              className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-[-0.01em]"
+              style={{ color: "var(--l44-white)" }}
+            >
+              Tell us what you&apos;re building.
+            </h2>
+            <p
+              className="text-sm sm:text-base leading-relaxed"
+              style={{ color: "var(--l44-white-70)" }}
+            >
+              Share a few details and we&apos;ll reply from <span style={{ color: "var(--l44-white)" }}>latitude44@protonmail.com</span>. For data recovery enquiries, please note the media type (VHS, Super 8, 3.5&#8243; floppy, HDD/SSD).
+            </p>
+          </motion.div>
+        )}
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10">
           {/* Form */}

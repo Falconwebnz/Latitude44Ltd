@@ -1,50 +1,42 @@
 [
   {
-    "content": "Phase 2: Get SendGrid integration playbook",
+    "content": "Refactor App.js into multi-page routing",
     "status": "completed"
   },
   {
-    "content": "Phase 2: Get design guidelines from design_agent",
+    "content": "Update Navbar to use NavLink (react-router)",
     "status": "completed"
   },
   {
-    "content": "Phase 2: Install dependencies (sendgrid, framer-motion, swiper)",
+    "content": "Create HomePage (concise: hero + 3 highlight cards + CTAs)",
     "status": "completed"
   },
   {
-    "content": "Phase 2: Backend - contact API with SendGrid + MongoDB storage",
+    "content": "Create ClaudeLearnPage with banner + existing feature",
     "status": "completed"
   },
   {
-    "content": "Phase 2: Frontend - SEO meta, SVG favicon, Montserrat",
+    "content": "Create WorkPage with banner + WorkShowcase + grid",
     "status": "completed"
   },
   {
-    "content": "Phase 2: Frontend - Hero with video background + Logo",
+    "content": "Create ServicesPage with banner + service cards w/ images",
     "status": "completed"
   },
   {
-    "content": "Phase 2: Frontend - Image Slider (3 images)",
+    "content": "Create ContactPage with banner + form + map",
     "status": "completed"
   },
   {
-    "content": "Phase 2: Frontend - Services (8 cards)",
+    "content": "Add service images (8 cards) + page banners",
     "status": "completed"
   },
   {
-    "content": "Phase 2: Frontend - Contact form + footer",
+    "content": "Per-page document.title via useEffect",
     "status": "completed"
   },
   {
-    "content": "Phase 2: All user stories covered in Development",
-    "status": "completed"
-  },
-  {
-    "content": "Phase 3: End to end testing with testing_agent_v3",
-    "status": "completed"
-  },
-  {
-    "content": "Phase 3: Fix issues & deliver",
+    "content": "Responsive test across FHD/laptop/tablet/mobile",
     "status": "completed"
   }
 ]

@@ -87,7 +87,7 @@ const fadeUp = {
   transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
 };
 
-const ClaudeLearnFeature = () => {
+const ClaudeLearnFeature = ({ embedded = false }) => {
   return (
     <section
       id="claude-learn"
@@ -108,45 +108,59 @@ const ClaudeLearnFeature = () => {
       />
 
       <div className="l44-container relative">
-        <motion.div {...fadeUp} className="flex flex-col gap-3 mb-10 sm:mb-14 max-w-3xl">
-          <span className="l44-eyebrow inline-flex items-center gap-3 flex-wrap">
-            <span className="l44-gold-rule" />
-            Latest Project
-            <span
-              data-testid="claude-learn-status-badge"
-              className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-semibold tracking-[0.18em] uppercase"
-              style={{
-                border: "1px solid var(--l44-border-gold-hairline)",
-                background: "var(--l44-gold-10)",
-                color: "var(--l44-gold)",
-              }}
-            >
-              <Sparkles size={11} />
-              Launching Soon
+        {!embedded && (
+          <motion.div {...fadeUp} className="flex flex-col gap-3 mb-10 sm:mb-14 max-w-3xl">
+            <span className="l44-eyebrow inline-flex items-center gap-3 flex-wrap">
+              <span className="l44-gold-rule" />
+              Latest Project
+              <span
+                data-testid="claude-learn-status-badge"
+                className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-semibold tracking-[0.18em] uppercase"
+                style={{
+                  border: "1px solid var(--l44-border-gold-hairline)",
+                  background: "var(--l44-gold-10)",
+                  color: "var(--l44-gold)",
+                }}
+              >
+                <Sparkles size={11} />
+                Launching Soon
+              </span>
             </span>
-          </span>
-          <h2
-            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-[-0.01em] leading-[1.05]"
-            style={{ color: "var(--l44-white)" }}
-          >
-            Claude Learn<span style={{ color: "var(--l44-gold)" }}>.</span>
-            <br />
-            <span
-              className="block text-2xl sm:text-3xl lg:text-4xl xl:text-5xl mt-2"
-              style={{ color: "var(--l44-white-85)" }}
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-[-0.01em] leading-[1.05]"
+              style={{ color: "var(--l44-white)" }}
             >
-              AI tutoring powered by Anthropic&apos;s Claude.
-            </span>
-          </h2>
-          <p
-            className="max-w-2xl text-sm sm:text-base lg:text-lg leading-relaxed"
+              Claude Learn<span style={{ color: "var(--l44-gold)" }}>.</span>
+              <br />
+              <span
+                className="block text-2xl sm:text-3xl lg:text-4xl xl:text-5xl mt-2"
+                style={{ color: "var(--l44-white-85)" }}
+              >
+                AI tutoring powered by Anthropic&apos;s Claude.
+              </span>
+            </h2>
+            <p
+              className="max-w-2xl text-sm sm:text-base lg:text-lg leading-relaxed"
+              style={{ color: "var(--l44-white-70)" }}
+            >
+              Our newest product. Claude Learn is a focused, conversational tutor that meets students,
+              educators, professionals and lifelong learners exactly where they are — and walks them
+              toward mastery, one thoughtful explanation at a time.
+            </p>
+          </motion.div>
+        )}
+
+        {embedded && (
+          <motion.p
+            {...fadeUp}
+            className="max-w-2xl mb-8 text-sm sm:text-base lg:text-lg leading-relaxed"
             style={{ color: "var(--l44-white-70)" }}
           >
-            Our newest product. Claude Learn is a focused, conversational tutor that meets students,
-            educators, professionals and lifelong learners exactly where they are — and walks them
-            toward mastery, one thoughtful explanation at a time.
-          </p>
-        </motion.div>
+            Claude Learn is a focused, conversational tutor that meets students, educators,
+            professionals and lifelong learners exactly where they are — and walks them toward
+            mastery, one thoughtful explanation at a time.
+          </motion.p>
+        )}
 
         {/* ============== Adaptive two-column layout ============== */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-start">

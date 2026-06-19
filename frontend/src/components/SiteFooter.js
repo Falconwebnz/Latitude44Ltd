@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FalconMark, Wordmark } from "./LogoMark";
 
 const SiteFooter = () => {
@@ -15,10 +16,10 @@ const SiteFooter = () => {
       <div className="l44-container py-10 sm:py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <a href="#home" className="inline-flex items-center gap-3" aria-label="Latitude44 home">
+            <Link to="/" className="inline-flex items-center gap-3" aria-label="Latitude44 home">
               <FalconMark size={36} />
               <Wordmark size="sm" />
-            </a>
+            </Link>
             <p className="mt-3 text-sm max-w-xs" style={{ color: "var(--l44-white-70)" }}>
               Digital Solutions. Precision. Performance. — Engineered in New Zealand.
             </p>
@@ -47,21 +48,21 @@ const SiteFooter = () => {
           <div className="flex flex-col gap-2">
             <span className="l44-eyebrow">Navigate</span>
             <nav className="flex flex-col gap-1.5 text-sm" aria-label="Footer">
-              <a href="#home" className="hover:text-white" style={{ color: "var(--l44-white-85)" }}>
+              <Link to="/" className="hover:text-white" style={{ color: "var(--l44-white-85)" }}>
                 Home
-              </a>
-              <a href="#claude-learn" className="hover:text-white" style={{ color: "var(--l44-white-85)" }}>
+              </Link>
+              <Link to="/claude-learn" className="hover:text-white" style={{ color: "var(--l44-white-85)" }}>
                 Claude Learn
-              </a>
-              <a href="#work" className="hover:text-white" style={{ color: "var(--l44-white-85)" }}>
+              </Link>
+              <Link to="/work" className="hover:text-white" style={{ color: "var(--l44-white-85)" }}>
                 Work
-              </a>
-              <a href="#services" className="hover:text-white" style={{ color: "var(--l44-white-85)" }}>
+              </Link>
+              <Link to="/services" className="hover:text-white" style={{ color: "var(--l44-white-85)" }}>
                 Services
-              </a>
-              <a href="#contact" className="hover:text-white" style={{ color: "var(--l44-white-85)" }}>
+              </Link>
+              <Link to="/contact" className="hover:text-white" style={{ color: "var(--l44-white-85)" }}>
                 Contact
-              </a>
+              </Link>
             </nav>
           </div>
         </div>
