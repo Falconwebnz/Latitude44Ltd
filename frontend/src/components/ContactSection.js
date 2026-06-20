@@ -10,7 +10,11 @@ import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+const FORMSPREE_ID = process.env.REACT_APP_FORMSPREE_ID;
+const API = BACKEND_URL ? `${BACKEND_URL}/api` : null;
+const FORMSPREE_ENDPOINT = FORMSPREE_ID
+  ? `https://formspree.io/f/${FORMSPREE_ID}`
+  : null;
 
 const fadeUp = {
   initial: { opacity: 0, y: 14 },
@@ -47,14 +51,37 @@ const ContactSection = ({ embedded = false }) => {
     if (!validate()) return;
     setSubmitting(true);
     try {
-      const resp = await axios.post(`${API}/contact`, form, {
-        headers: { "Content-Type": "application/json" },
-        timeout: 15000,
-      });
-      toast.success(resp?.data?.message || "Thanks — your message has been received.");
+      if (API) {
+        // FastAPI backend path
+        const resp = await axios.post(`${API}/contact`, form, {
+          headers: { "Content-Type": "application/json" },
+          timeout: 15000,
+        });
+        toast.success(resp?.data?.message || "Thanks — your message has been received.");
+      } else if (FORMSPREE_ENDPOINT) {
+        // Formspree path (static hosting on GitHub Pages)
+        const resp = await axios.post(FORMSPREE_ENDPOINT, form, {
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          timeout: 15000,
+        });
+        if (resp.status >= 200 && resp.status < 300) {
+          toast.success(
+            "Thanks — your message has been sent. We'll reply from latitude44@protonmail.com.",
+          );
+        } else {
+          throw new Error("Formspree returned " + resp.status);
+        }
+      } else {
+        // No backend configured at all — graceful fallback
+        toast.error(
+          "Contact form isn't configured yet. Please email latitude44@protonmail.com directly.",
+        );
+        return;
+      }
       setForm({ name: "", email: "", subject: "", message: "" });
     } catch (err) {
       const msg =
+        err?.response?.data?.errors?.[0]?.message ||
         err?.response?.data?.detail ||
         err?.response?.data?.message ||
         "Something went wrong. Please try again or email latitude44@protonmail.com directly.";
