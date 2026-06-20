@@ -21,8 +21,9 @@ const HIGHLIGHTS = [
     to: "/claude-learn",
     cta: "Explore Claude Learn",
     image:
-      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Abstract AI visualisation",
+      "https://images.pexels.com/photos/5905885/pexels-photo-5905885.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
+    imageAlt:
+      "A friendly student taking notes while a tutor appears on the computer screen",
   },
   {
     icon: Code2,
