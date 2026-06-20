@@ -20,10 +20,10 @@ const HIGHLIGHTS = [
       "AI tutoring powered by Anthropic’s Claude — personalised lessons, adaptive practice and instant feedback.",
     to: "/claude-learn",
     cta: "Explore Claude Learn",
-    image:
-      "https://images.pexels.com/photos/5905885/pexels-photo-5905885.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
+    localBase: "/highlights/claude-learn-card",
+    widths: [640, 960, 1280],
     imageAlt:
-      "A friendly student taking notes while a tutor appears on the computer screen",
+      "Smiling professional studying with her phone, laptop and an open book in a library",
   },
   {
     icon: Code2,
@@ -137,13 +137,36 @@ const HomePage = () => {
                   className="relative w-full overflow-hidden"
                   style={{ aspectRatio: "16 / 9" }}
                 >
-                  <img
-                    src={h.image}
-                    alt={h.imageAlt}
-                    loading="lazy"
-                    decoding="async"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
-                  />
+                  {h.localBase ? (
+                    <picture>
+                      <source
+                        type="image/webp"
+                        srcSet={h.widths
+                          .map((w) => `${h.localBase}-${w}.webp ${w}w`)
+                          .join(", ")}
+                        sizes="(max-width: 768px) 92vw, 600px"
+                      />
+                      <img
+                        src={`${h.localBase}-${h.widths[1]}.jpg`}
+                        srcSet={h.widths
+                          .map((w) => `${h.localBase}-${w}.jpg ${w}w`)
+                          .join(", ")}
+                        sizes="(max-width: 768px) 92vw, 600px"
+                        alt={h.imageAlt}
+                        loading="lazy"
+                        decoding="async"
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+                      />
+                    </picture>
+                  ) : (
+                    <img
+                      src={h.image}
+                      alt={h.imageAlt}
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+                    />
+                  )}
                   <div
                     aria-hidden
                     className="absolute inset-0"
