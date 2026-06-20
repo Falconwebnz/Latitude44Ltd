@@ -74,9 +74,16 @@ const SiteFooter = () => {
           <p className="text-xs" style={{ color: "var(--l44-white-55)" }}>
             &copy; {year} Latitude44 (NZ) Limited. All rights reserved.
           </p>
-          <p className="text-[11px] tracking-[0.2em] uppercase" style={{ color: "var(--l44-white-55)" }}>
+          <a
+            href="https://latitude44.co.nz"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="footer-domain-link"
+            className="text-[11px] tracking-[0.2em] uppercase transition-colors hover:text-[color:var(--l44-gold)]"
+            style={{ color: "var(--l44-white-55)" }}
+          >
             latitude44.co.nz
-          </p>
+          </a>
         </div>
       </div>
     </footer>

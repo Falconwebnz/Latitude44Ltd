@@ -9,6 +9,7 @@ const ClaudeLearnPage = () => {
       "Claude Learn — AI tutoring powered by Anthropic’s Claude | Latitude44",
     description:
       "Claude Learn by Latitude44 — AI tutoring powered by Anthropic’s Claude. Personalised lessons, adaptive practice and instant feedback for students, educators and professionals. Launching soon at latitude44.app.",
+    path: "/claude-learn",
   });
 
   return (

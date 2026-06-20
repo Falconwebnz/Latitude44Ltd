@@ -67,6 +67,7 @@ const WorkPage = () => {
     title: "Work — Selected projects across New Zealand | Latitude44",
     description:
       "Selected web and app projects by Latitude44 — for NZ bullion dealers, academies, authors, trades and more.",
+    path: "/work",
   });
 
   return (

@@ -1,0 +1,8 @@
+# https://latitude44.co.nz/robots.txt
+# Latitude44 (NZ) Limited
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://latitude44.co.nz/sitemap.xml

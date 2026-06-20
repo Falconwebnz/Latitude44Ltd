@@ -110,6 +110,7 @@ const ServicesPage = () => {
     title: "Services — Web, App, AI, Consulting, Hardware & Data Recovery | Latitude44",
     description:
       "Eight disciplines, one standard. Front-end web and app development, AI integration, IT consulting, education, product sales, hardware support and specialist data recovery — from Latitude44 in Canterbury, New Zealand.",
+    path: "/services",
   });
 
   return (

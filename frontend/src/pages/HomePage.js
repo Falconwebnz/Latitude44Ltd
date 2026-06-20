@@ -74,6 +74,9 @@ const HomePage = () => {
   usePageMeta({
     title:
       "Latitude44 | Digital Solutions, Precision, Performance — Canterbury, New Zealand",
+    description:
+      "Latitude44 (NZ) Limited — Rangiora, Canterbury, New Zealand digital studio delivering precision front-end web and app development, AI integration, IT consulting, education, product sales, hardware support and specialist data recovery. Makers of Claude Learn (latitude44.app). Serving all of New Zealand.",
+    path: "/",
   });
 
   return (
