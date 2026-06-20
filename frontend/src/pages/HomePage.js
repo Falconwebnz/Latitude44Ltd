@@ -28,7 +28,7 @@ const HIGHLIGHTS = [
   {
     icon: Code2,
     eyebrow: "Recent work",
-    title: "Built across NZ",
+    title: "Built across NZ and AUS",
     blurb:
       "Web and app builds for bullion dealers, academies, authors and local trades — quietly performant, beautifully designed.",
     to: "/work",
