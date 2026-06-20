@@ -23,7 +23,7 @@ const PROJECTS = [
     tags: "E-commerce · Live pricing · Brand",
     blurb:
       "Premium landing for a Christchurch bullion dealer — live precious-metal prices, booking flow and educational hub.",
-    href: "https://www.southernbullion.co.nz",
+    href: "https://www.southernbullionex.co.nz",
   },
   {
     id: "augustine_academy",
@@ -146,40 +146,62 @@ const WorkPage = () => {
                 {...fadeUp}
                 transition={{ duration: 0.6, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
                 data-testid={`work-project-${p.id}`}
-                className="py-6 sm:py-7 flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-6"
+                className="py-6 sm:py-7 grid grid-cols-1 sm:grid-cols-[3rem_1fr_auto] sm:items-start gap-x-4 sm:gap-x-6 gap-y-2"
                 style={{ borderTop: "1px solid var(--l44-border-hairline)" }}
               >
+                {/* Column 1 — Project number */}
                 <span
-                  className="flex-shrink-0 text-[11px] tracking-[0.22em] uppercase"
+                  className="text-[11px] tracking-[0.22em] uppercase font-semibold sm:pt-1"
                   style={{ color: "var(--l44-gold)" }}
                 >
-                  {String(i + 1).padStart(2, "0")} — {p.tags}
+                  {String(i + 1).padStart(2, "0")}
                 </span>
-                <div className="flex-1">
+
+                {/* Column 2 — Tags + title + blurb */}
+                <div className="min-w-0">
+                  <div
+                    className="text-[11px] tracking-[0.22em] uppercase"
+                    style={{ color: "var(--l44-gold)" }}
+                  >
+                    {p.tags}
+                  </div>
                   <h3
-                    className="text-lg sm:text-xl font-semibold"
+                    className="mt-1.5 text-lg sm:text-xl font-semibold leading-snug"
                     style={{ color: "var(--l44-white)" }}
                   >
                     {p.title}
                   </h3>
                   <p
-                    className="mt-1 text-sm leading-relaxed max-w-3xl"
+                    className="mt-1.5 text-sm leading-relaxed max-w-3xl"
                     style={{ color: "var(--l44-white-70)" }}
                   >
                     {p.blurb}
                   </p>
                 </div>
-                {p.href && (
-                  <a
-                    href={p.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[11px] tracking-[0.18em] uppercase font-semibold whitespace-nowrap"
-                    style={{ color: "var(--l44-gold)" }}
-                  >
-                    Visit <ArrowUpRight size={13} />
-                  </a>
-                )}
+
+                {/* Column 3 — Visit link (right-aligned) */}
+                <div className="sm:pt-1 flex sm:justify-end">
+                  {p.href ? (
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid={`work-project-link-${p.id}`}
+                      className="inline-flex items-center gap-1 text-[11px] tracking-[0.18em] uppercase font-semibold whitespace-nowrap transition-colors"
+                      style={{ color: "var(--l44-gold)" }}
+                    >
+                      Visit <ArrowUpRight size={13} />
+                    </a>
+                  ) : (
+                    <span
+                      className="hidden sm:inline-flex items-center text-[11px] tracking-[0.18em] uppercase whitespace-nowrap"
+                      style={{ color: "var(--l44-white-55)" }}
+                      aria-hidden
+                    >
+                      —
+                    </span>
+                  )}
+                </div>
               </motion.li>
             ))}
           </ul>
