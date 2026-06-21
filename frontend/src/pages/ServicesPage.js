@@ -5,8 +5,6 @@ import {
   Code2,
   Smartphone,
   BrainCircuit,
-  Lightbulb,
-  GraduationCap,
   ShoppingBag,
   Wrench,
   HardDriveDownload,
@@ -17,7 +15,7 @@ import usePageMeta from "../hooks/usePageMeta";
 import PageBanner from "../components/PageBanner";
 
 /**
- * Services page — each of the 8 disciplines gets a full card with image,
+ * Services page — each of the 6 disciplines gets a full card with image,
  * icon, title and description. Mobile-first responsive grid.
  */
 
@@ -48,24 +46,6 @@ const SERVICES = [
     image:
       "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
     alt: "Abstract AI / neural visualisation",
-  },
-  {
-    id: "consulting",
-    icon: Lightbulb,
-    title: "Consulting",
-    desc: "Product, architecture and delivery guidance for NZ businesses — pragmatic strategy that respects your timeline and budget.",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
-    alt: "Strategy whiteboard session",
-  },
-  {
-    id: "education",
-    icon: GraduationCap,
-    title: "Education",
-    desc: "Hands-on workshops and team training across web, mobile and AI — from fundamentals to modern engineering practice.",
-    image:
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
-    alt: "Workshop / classroom learning",
   },
   {
     id: "products",
@@ -107,9 +87,9 @@ const cardVariant = {
 
 const ServicesPage = () => {
   usePageMeta({
-    title: "Services — Web, App, AI, Consulting, Hardware & Data Recovery | Latitude44",
+    title: "Services — Web, App, AI, Product Sales, Hardware & Data Recovery | Latitude44",
     description:
-      "Eight disciplines, one standard. Front-end web and app development, AI integration, IT consulting, education, product sales, hardware support and specialist data recovery — from Latitude44 in Canterbury, New Zealand.",
+      "Six disciplines, one standard. Front-end web and app development, AI integration, product sales, hardware support and specialist data recovery — from Latitude44 in Canterbury, New Zealand.",
     path: "/services",
   });
 
@@ -117,7 +97,7 @@ const ServicesPage = () => {
     <>
       <PageBanner
         eyebrow="What we do"
-        title="Eight disciplines, one standard."
+        title="Six disciplines, one standard."
         blurb="From greenfield web builds and AI integration to recovering decades-old media, Latitude44 brings a single, considered standard to every engagement."
         image="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80"
         imageAlt="Macro circuit board photograph"

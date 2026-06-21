@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
  *
  *   <PageBanner
  *      eyebrow="Services"
- *      title="Eight disciplines, one standard."
+ *      title="Six disciplines, one standard."
  *      blurb="Optional short paragraph..."
  *      image="https://..."
  *      imageAlt="..."

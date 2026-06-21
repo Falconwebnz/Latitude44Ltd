@@ -40,9 +40,9 @@ const HIGHLIGHTS = [
   {
     icon: BrainCircuit,
     eyebrow: "What we do",
-    title: "Eight services",
+    title: "Six services",
     blurb:
-      "From greenfield web and app builds to AI integration, consulting, hardware support and specialist data recovery.",
+      "From greenfield web and app builds to AI integration, product sales, hardware support and specialist data recovery.",
     to: "/services",
     cta: "Browse services",
     image:
@@ -75,7 +75,7 @@ const HomePage = () => {
     title:
       "Latitude44 | Digital Solutions, Precision, Performance — Canterbury, New Zealand",
     description:
-      "Latitude44 (NZ) Limited — Rangiora, Canterbury, New Zealand digital studio delivering precision front-end web and app development, AI integration, IT consulting, education, product sales, hardware support and specialist data recovery. Makers of Claude Learn (latitude44.app). Serving all of New Zealand.",
+      "Latitude44 (NZ) Limited — Rangiora, Canterbury, New Zealand digital studio delivering precision front-end web and app development, AI integration, product sales, hardware support and specialist data recovery. Makers of Claude Learn (latitude44.app). Serving all of New Zealand.",
     path: "/",
   });
 
