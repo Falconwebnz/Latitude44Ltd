@@ -10,7 +10,7 @@ import WorkShowcase from "../components/WorkShowcase";
 /** Quick stats / signal-of-trust strip. */
 const STATS = [
   { value: "100%", label: "NZ owned & operated" },
-  { value: "8", label: "core disciplines" },
+  { value: "6", label: "core disciplines" },
   { value: "24h", label: "first response, business days" },
   { value: "∞", label: "care after launch" },
 ];
