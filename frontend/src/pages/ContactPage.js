@@ -7,7 +7,7 @@ const ContactPage = () => {
   usePageMeta({
     title: "Contact — Latitude44 (NZ) Limited | Rangiora, Canterbury",
     description:
-      "Get in touch with Latitude44 (NZ) Limited. Email latitude44@protonmail.com. Studio at 123 King Street, Rangiora, Canterbury 7400 — serving all of New Zealand. Web: latitude44.co.nz.",
+      "Get in touch with Latitude44 (NZ) Limited. Email latitude44@protonmail.com. Based in Rangiora 7400, Canterbury — serving all of New Zealand. Web: latitude44.co.nz.",
     path: "/contact",
   });
 

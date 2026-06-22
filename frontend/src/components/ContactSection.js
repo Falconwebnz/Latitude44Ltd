@@ -330,15 +330,13 @@ const ContactSection = ({ embedded = false }) => {
                 <address className="not-italic text-sm leading-relaxed" style={{ color: "var(--l44-white-85)" }}>
                   Latitude44 (NZ) Limited
                   <br />
-                  123 King Street
-                  <br />
-                  Rangiora, Canterbury 7400
+                  Rangiora 7400
                   <br />
                   New Zealand
                 </address>
               </div>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=123+King+Street+Rangiora+Canterbury+7400+New+Zealand"
+                href="https://www.google.com/maps/search/?api=1&query=Rangiora+7400+New+Zealand"
                 target="_blank"
                 rel="noreferrer"
                 data-testid="contact-map-link"
