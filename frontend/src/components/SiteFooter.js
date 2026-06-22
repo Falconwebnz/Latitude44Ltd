@@ -39,9 +39,7 @@ const SiteFooter = () => {
               className="not-italic text-sm leading-relaxed"
               style={{ color: "var(--l44-white-70)" }}
             >
-              123 King Street, Rangiora
-              <br />
-              Canterbury 7400, New Zealand
+              Rangiora 7400, New Zealand
             </address>
           </div>
 
