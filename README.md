@@ -35,6 +35,12 @@ yarn build          # outputs to frontend/build/
 
 ## Deploy to GitHub Pages
 
+**Full step-by-step walkthrough:** see [`DEPLOYMENT.md`](./DEPLOYMENT.md) for
+the complete guide covering the GitHub repo, Formspree signup, Porkbun DNS,
+HTTPS enforcement and day-2 operations.
+
+Quick summary:
+
 A GitHub Actions workflow at `.github/workflows/deploy.yml` builds and publishes
 to Pages on every push to `main`. To wire it up:
 
