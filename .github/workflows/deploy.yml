@@ -30,12 +30,34 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
+
+      - name: Detect yarn.lock for caching
+        id: cache-detect
+        run: |
+          if [ -f frontend/yarn.lock ]; then
+            echo "has_lock=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_lock=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::frontend/yarn.lock not found — installing without cache or frozen lockfile."
+          fi
+        working-directory: ${{ github.workspace }}
+
+      - name: Enable yarn cache (only if lockfile exists)
+        if: steps.cache-detect.outputs.has_lock == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
           cache: yarn
           cache-dependency-path: frontend/yarn.lock
 
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      - name: Install dependencies (frozen)
+        if: steps.cache-detect.outputs.has_lock == 'true'
+        run: yarn install --frozen-lockfile --network-timeout 600000
+
+      - name: Install dependencies (no lockfile)
+        if: steps.cache-detect.outputs.has_lock == 'false'
+        run: yarn install --network-timeout 600000
 
       - name: Build production bundle
         env:
