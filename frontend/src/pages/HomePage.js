@@ -15,7 +15,7 @@ const HIGHLIGHTS = [
   {
     icon: Sparkles,
     eyebrow: "Latest project",
-    title: "Claude Learn",
+    title: "Claude Learn AI Mastery",
     blurb:
       "AI tutoring powered by Anthropic’s Claude — personalised lessons, adaptive practice and instant feedback.",
     to: "/claude-learn",

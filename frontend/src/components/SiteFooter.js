@@ -50,7 +50,7 @@ const SiteFooter = () => {
                 Home
               </Link>
               <Link to="/claude-learn" className="hover:text-white" style={{ color: "var(--l44-white-85)" }}>
-                Claude Learn
+                Claude Learn AI Mastery
               </Link>
               <Link to="/work" className="hover:text-white" style={{ color: "var(--l44-white-85)" }}>
                 Work

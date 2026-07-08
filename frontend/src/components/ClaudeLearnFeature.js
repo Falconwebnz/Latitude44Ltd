@@ -130,7 +130,7 @@ const ClaudeLearnFeature = ({ embedded = false }) => {
               className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-[-0.01em] leading-[1.05]"
               style={{ color: "var(--l44-white)" }}
             >
-              Claude Learn<span style={{ color: "var(--l44-gold)" }}>.</span>
+              Claude Learn AI Mastery<span style={{ color: "var(--l44-gold)" }}>.</span>
               <br />
               <span
                 className="block text-2xl sm:text-3xl lg:text-4xl xl:text-5xl mt-2"
