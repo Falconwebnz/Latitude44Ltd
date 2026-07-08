@@ -9,7 +9,7 @@ import React from "react";
  * Pass `href` to link to your listing. Default opens a tab to play store.
  */
 const GooglePlayBadge = ({
-  href = "https://play.google.com/store/apps",
+  href = "https://play.google.com/store/apps/details?id=com.latitude44.claudelearn",
   className = "",
   height = 56,
   testId = "google-play-badge",

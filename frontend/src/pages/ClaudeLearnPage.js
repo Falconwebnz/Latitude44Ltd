@@ -8,14 +8,14 @@ const ClaudeLearnPage = () => {
     title:
       "Claude Learn AI Mastery — AI tutoring powered by Anthropic’s Claude | Latitude44",
     description:
-      "Claude Learn by Latitude44 — AI tutoring powered by Anthropic’s Claude. Personalised lessons, adaptive practice and instant feedback for students, educators and professionals. Launching soon at latitude44.app.",
+      "Claude Learn AI Mastery by Latitude44 — AI tutoring powered by Anthropic’s Claude. Personalised lessons, adaptive practice and instant feedback for students, educators and professionals. Now live on Google Play.",
     path: "/claude-learn",
   });
 
   return (
     <>
       <PageBanner
-        eyebrow="Latest project · Launching soon"
+        eyebrow="Latest project · Now on Google Play"
         title="Claude Learn AI Mastery."
         blurb="AI tutoring powered by Anthropic’s Claude. A focused, conversational tutor that meets every learner where they are — and walks them toward mastery, one explanation at a time."
         image="https://images.unsplash.com/photo-1655720828018-edd2daec9349?auto=format&fit=crop&w=1400&q=80"

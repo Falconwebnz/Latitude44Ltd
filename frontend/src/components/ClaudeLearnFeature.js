@@ -123,7 +123,7 @@ const ClaudeLearnFeature = ({ embedded = false }) => {
                 }}
               >
                 <Sparkles size={11} />
-                Launching Soon
+                Live on Google Play
               </span>
             </span>
             <h2
@@ -219,8 +219,10 @@ const ClaudeLearnFeature = ({ embedded = false }) => {
                   <ArrowUpRight size={16} />
                 </a>
                 <a
-                  href="#contact"
-                  data-testid="claude-learn-waitlist-cta"
+                  href="https://play.google.com/store/apps/details?id=com.latitude44.claudelearn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="claude-learn-download-cta"
                   className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-xs sm:text-sm font-medium tracking-[0.18em] uppercase whitespace-nowrap border transition-colors duration-200"
                   style={{
                     borderColor: "var(--l44-border-gold-hairline)",
@@ -229,7 +231,7 @@ const ClaudeLearnFeature = ({ embedded = false }) => {
                   }}
                 >
                   <GraduationCap size={16} />
-                  Join the Waitlist
+                  Download on Google Play
                 </a>
               </div>
 
@@ -239,14 +241,14 @@ const ClaudeLearnFeature = ({ embedded = false }) => {
                   className="text-[11px] tracking-[0.22em] uppercase"
                   style={{ color: "var(--l44-white-55)" }}
                 >
-                  Coming soon to
+                  Available now on
                 </span>
                 <div className="flex flex-wrap items-center gap-3">
                   <GooglePlayBadge
-                    href="https://play.google.com/store/apps"
+                    href="https://play.google.com/store/apps/details?id=com.latitude44.claudelearn"
                     height={56}
                     testId="claude-learn-google-play"
-                    ariaLabel="Get Claude Learn on Google Play (coming soon)"
+                    ariaLabel="Get Claude Learn AI Mastery on Google Play"
                   />
                 </div>
               </div>

@@ -107,7 +107,7 @@ const HeroVideo = () => {
                   style={{ background: "var(--l44-gold)" }}
                 />
                 <span style={{ color: "var(--l44-gold)" }}>New</span>
-                <span>· Claude Learn — launching soon</span>
+                <span>· Claude Learn AI Mastery — now on Google Play</span>
                 <span aria-hidden style={{ color: "var(--l44-gold)" }}>→</span>
               </Link>
             </motion.div>
