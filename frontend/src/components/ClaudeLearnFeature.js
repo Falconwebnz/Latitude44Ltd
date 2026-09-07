@@ -33,7 +33,7 @@ const PROMOS = [
     orientation: "landscape", // 1024 × 500 → ~2.05:1
     aspect: 1024 / 500,
     widths: [960, 1280, 1600],
-    alt: "Latitude44 · Claude Learn — Master Claude AI launch graphic",
+    alt: "Latitude44 · Ten By Ninety — Master Claude AI launch graphic",
   },
   {
     id: "work",
@@ -130,7 +130,7 @@ const ClaudeLearnFeature = ({ embedded = false }) => {
               className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-[-0.01em] leading-[1.05]"
               style={{ color: "var(--l44-white)" }}
             >
-              Claude Learn AI Mastery<span style={{ color: "var(--l44-gold)" }}>.</span>
+              Ten By Ninety Learn AI Mastery<span style={{ color: "var(--l44-gold)" }}>.</span>
               <br />
               <span
                 className="block text-2xl sm:text-3xl lg:text-4xl xl:text-5xl mt-2"
@@ -143,8 +143,8 @@ const ClaudeLearnFeature = ({ embedded = false }) => {
               className="max-w-2xl text-sm sm:text-base lg:text-lg leading-relaxed"
               style={{ color: "var(--l44-white-70)" }}
             >
-              Our newest product. Claude Learn is a focused, conversational tutor that meets students,
-              educators, professionals and lifelong learners exactly where they are — and walks them
+              Our newest product. Ten By Ninety is a focused, conversational tutor that meets businesses, students,
+              educators, professionals exactly where they are — and walks them
               toward mastery, one thoughtful explanation at a time.
             </p>
           </motion.div>
@@ -156,7 +156,7 @@ const ClaudeLearnFeature = ({ embedded = false }) => {
             className="max-w-2xl mb-8 text-sm sm:text-base lg:text-lg leading-relaxed"
             style={{ color: "var(--l44-white-70)" }}
           >
-            Claude Learn is a focused, conversational tutor that meets students, educators,
+            Ten By Ninety is a focused, conversational tutor that meets students, educators,
             professionals and lifelong learners exactly where they are — and walks them toward
             mastery, one thoughtful explanation at a time.
           </motion.p>
@@ -248,7 +248,7 @@ const ClaudeLearnFeature = ({ embedded = false }) => {
                     href="https://play.google.com/store/apps/details?id=com.latitude44.claudelearn"
                     height={56}
                     testId="claude-learn-google-play"
-                    ariaLabel="Get Claude Learn AI Mastery on Google Play"
+                    ariaLabel="Get the Ten By Ninety Learn AI Mastery on Google Play"
                   />
                 </div>
               </div>
