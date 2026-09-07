@@ -8,7 +8,7 @@ const ClaudeLearnPage = () => {
     title:
       "Ten By Ninety - Learn AI Mastery — AI tutoring powered by Anthropic's Claude | Latitude44",
     description:
-      "Ten By Ninety - Learn AI Mastery by Latitude44 — AI tutoring powered by Anthropic's Claude. Personalised lessons, adaptive practice and instant feedback for students, educators and professionals. No[...]
+      "Ten By Ninety - Learn AI Mastery by Latitude44 — AI tutoring powered by Anthropic's Claude. Personalised lessons, adaptive practice and instant feedback for students, educators and professionals.",
     path: "/claude-learn",
   });
 
