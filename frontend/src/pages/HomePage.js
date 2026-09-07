@@ -30,7 +30,7 @@ const HIGHLIGHTS = [
     eyebrow: "Recent work",
     title: "Built across NZ and AUS",
     blurb:
-      "Web and app builds for bullion dealers, academies, authors and local trades — quietly performant, beautifully designed.",
+      "Web and app builds for business, education, authors and local trades — quietly performant, beautifully designed.",
     to: "/work",
     cta: "See the work",
     image:
