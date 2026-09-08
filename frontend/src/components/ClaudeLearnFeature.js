@@ -223,7 +223,7 @@ const ClaudeLearnFeature = ({ embedded = false }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="claude-learn-download-cta"
-                  className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-xs sm:text-sm font-medium tracking-[0.18em] uppercase whitespace-nowrap border transition-colors"
+                  className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-xs sm:text-sm font-medium tracking-[0.18em] uppercase whitespace-nowrap border transition-co[...]
                   style={{
                     borderColor: "var(--l44-border-gold-hairline)",
                     color: "var(--l44-white)",
@@ -495,13 +495,13 @@ const GalleryImage = ({ slide, thumb = false, sizes }) => {
         sizes={computedSizes}
       />
       <img
-        src={`${base}-${ws[1]}.jpg`}
-        srcSet={ws.map((w) => `${base}-${w}.jpg ${w}w`).join(", ")}
-        sizes={computedSizes}
+        sizes="(max-width: 1024px) 80vw, 480px"
         alt={thumb ? "" : slide.alt}
         loading={thumb ? "lazy" : "eager"}
         decoding="async"
         className={fitClass}
+        srcSet="/claude-learn/screenshot_10min-v1-640.jpg 640w, /claude-learn/screenshot_10min-v1-960.jpg 960w, /claude-learn/screenshot_10min-v1-1280.jpg 1280w"
+        src="/claude-learn/screenshot_10min-v1-960.jpg"
       />
     </picture>
   );
