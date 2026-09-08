@@ -212,7 +212,7 @@ const ClaudeLearnFeature = ({ embedded = false }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="claude-learn-visit-cta"
-                  className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase whitespace-nowrap transition-[background-[...]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase whitespace-nowrap transition-[backgr[...]
                   style={{ background: "var(--l44-gold)", color: "var(--l44-navy)" }}
                 >
                   Visit latitude44.app
@@ -223,7 +223,7 @@ const ClaudeLearnFeature = ({ embedded = false }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="claude-learn-download-cta"
-                  className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-xs sm:text-sm font-medium tracking-[0.18em] uppercase whitespace-nowrap border transition-colors [...]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-xs sm:text-sm font-medium tracking-[0.18em] uppercase whitespace-nowrap border transition-co[...]"
                   style={{
                     borderColor: "var(--l44-border-gold-hairline)",
                     color: "var(--l44-white)",
@@ -443,24 +443,35 @@ const ClaudeLearnGallery = () => {
    `thumb` = letter-box (object-contain) to keep full image visible.
    Active stage frame uses object-cover for an edge-to-edge hero.
    ────────────────────────────────────────────────────────────── */
-// Special-case the main feature image to use the local PNG (feature_1024x500.png)
+// Special-case the main feature image to use WebP/JPG srcset variants
 const GalleryImage = ({ slide, thumb = false, sizes }) => {
   const isFeature = slide.name === "feature_graphic";
 
   if (isFeature) {
+    // filenames (placed in /claude-learn/):
+    // feature-960.webp, feature-1280.webp, feature-1600.webp
+    // feature-960.jpg, feature-1280.jpg, feature-1600.jpg
+    const ws = [960, 1280, 1600];
+    const webpSrcSet = ws.map((w) => `/claude-learn/feature-${w}.webp ${w}w`).join(", ");
+    const jpgSrcSet = ws.map((w) => `/claude-learn/feature-${w}.jpg ${w}w`).join(", ");
     const fitClass = thumb
       ? "absolute inset-0 h-full w-full object-contain p-1"
       : "absolute inset-0 h-full w-full object-cover";
     const computedSizes = sizes || "(max-width: 1024px) 92vw, 720px";
+
     return (
-      <img
-        src={`/claude-learn/feature_1024x500.png`}
-        alt={thumb ? "" : slide.alt}
-        loading={thumb ? "lazy" : "eager"}
-        decoding="async"
-        sizes={computedSizes}
-        className={fitClass}
-      />
+      <picture>
+        <source type="image/webp" srcSet={webpSrcSet} sizes={computedSizes} />
+        <img
+          src="/claude-learn/feature-1280.jpg"
+          srcSet={jpgSrcSet}
+          sizes={computedSizes}
+          alt={thumb ? "" : slide.alt}
+          loading={thumb ? "lazy" : "eager"}
+          decoding="async"
+          className={fitClass}
+        />
+      </picture>
     );
   }
 
