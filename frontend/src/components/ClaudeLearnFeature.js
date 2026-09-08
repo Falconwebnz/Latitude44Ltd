@@ -212,7 +212,7 @@ const ClaudeLearnFeature = ({ embedded = false }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="claude-learn-visit-cta"
-                  className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase whitespace-nowrap transition-[background-color,box-shadow] duration-200"
+                  className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase whitespace-nowrap transition-[background-[...]"
                   style={{ background: "var(--l44-gold)", color: "var(--l44-navy)" }}
                 >
                   Visit latitude44.app
@@ -223,7 +223,7 @@ const ClaudeLearnFeature = ({ embedded = false }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="claude-learn-download-cta"
-                  className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-xs sm:text-sm font-medium tracking-[0.18em] uppercase whitespace-nowrap border transition-colors duration-200"
+                  className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-xs sm:text-sm font-medium tracking-[0.18em] uppercase whitespace-nowrap border transition-colors [...]"
                   style={{
                     borderColor: "var(--l44-border-gold-hairline)",
                     color: "var(--l44-white)",
@@ -443,7 +443,27 @@ const ClaudeLearnGallery = () => {
    `thumb` = letter-box (object-contain) to keep full image visible.
    Active stage frame uses object-cover for an edge-to-edge hero.
    ────────────────────────────────────────────────────────────── */
+// Special-case the main feature image to use the local PNG (feature_1024x500.png)
 const GalleryImage = ({ slide, thumb = false, sizes }) => {
+  const isFeature = slide.name === "feature_graphic";
+
+  if (isFeature) {
+    const fitClass = thumb
+      ? "absolute inset-0 h-full w-full object-contain p-1"
+      : "absolute inset-0 h-full w-full object-cover";
+    const computedSizes = sizes || "(max-width: 1024px) 92vw, 720px";
+    return (
+      <img
+        src={`/claude-learn/feature_1024x500.png`}
+        alt={thumb ? "" : slide.alt}
+        loading={thumb ? "lazy" : "eager"}
+        decoding="async"
+        sizes={computedSizes}
+        className={fitClass}
+      />
+    );
+  }
+
   const base = `/claude-learn/${slide.name}-v1`;
   const ws = slide.widths;
   const computedSizes =
@@ -454,8 +474,8 @@ const GalleryImage = ({ slide, thumb = false, sizes }) => {
   const fitClass = thumb
     ? "absolute inset-0 h-full w-full object-contain p-1"
     : slide.orientation === "portrait"
-      ? "absolute inset-0 h-full w-full object-contain"
-      : "absolute inset-0 h-full w-full object-cover";
+    ? "absolute inset-0 h-full w-full object-contain"
+    : "absolute inset-0 h-full w-full object-cover";
   return (
     <picture>
       <source
