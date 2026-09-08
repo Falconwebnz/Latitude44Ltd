@@ -508,3 +508,4 @@ const GalleryImage = ({ slide, thumb = false, sizes }) => {
 };
 
 export default ClaudeLearnFeature;
+
