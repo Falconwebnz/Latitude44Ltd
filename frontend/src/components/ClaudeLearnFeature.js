@@ -28,7 +28,7 @@ const PROMOS = [
   {
     id: "feature",
     label: "Launch graphic",
-    short: "Master Claude AI",
+    short: "Ten By Ninety : Learn AI",
     name: "feature_graphic",
     orientation: "landscape", // 1024 × 500 → ~2.05:1
     aspect: 1024 / 500,
