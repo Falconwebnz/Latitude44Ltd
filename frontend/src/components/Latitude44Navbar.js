@@ -5,7 +5,7 @@ import { FalconMark, Wordmark } from "./LogoMark";
 
 const navItems = [
   { label: "Home", to: "/", testId: "nav-home-link" },
-  { label: "Claude Learn AI Mastery", to: "/claude-learn", testId: "nav-claude-learn-link" },
+  { label: "Ten By Ninety AI Mastery", to: "/claude-learn", testId: "nav-claude-learn-link" },
   { label: "Work", to: "/work", testId: "nav-work-link" },
   { label: "Services", to: "/services", testId: "nav-services-link" },
   { label: "Contact", to: "/contact", testId: "nav-contact-link" },
