@@ -30,7 +30,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
 
       - name: Detect yarn.lock for caching
         id: cache-detect
@@ -47,7 +47,7 @@ jobs:
         if: steps.cache-detect.outputs.has_lock == 'true'
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: yarn
           cache-dependency-path: frontend/yarn.lock
 
