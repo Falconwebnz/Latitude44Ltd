@@ -212,7 +212,7 @@ const ClaudeLearnFeature = ({ embedded = false }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="claude-learn-visit-cta"
-                  className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase whitespace-nowrap transition-[backgr[...]
+                  className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase whitespace-nowrap transition-colors"
                   style={{ background: "var(--l44-gold)", color: "var(--l44-navy)" }}
                 >
                   Visit latitude44.app
@@ -223,7 +223,7 @@ const ClaudeLearnFeature = ({ embedded = false }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="claude-learn-download-cta"
-                  className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-xs sm:text-sm font-medium tracking-[0.18em] uppercase whitespace-nowrap border transition-co[...]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-xs sm:text-sm font-medium tracking-[0.18em] uppercase whitespace-nowrap border transition-colors"
                   style={{
                     borderColor: "var(--l44-border-gold-hairline)",
                     color: "var(--l44-white)",
