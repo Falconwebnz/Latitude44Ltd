@@ -500,8 +500,8 @@ const GalleryImage = ({ slide, thumb = false, sizes }) => {
         loading={thumb ? "lazy" : "eager"}
         decoding="async"
         className={fitClass}
-        srcSet="/claude-learn/screenshot_10min-v1-640.jpg 640w, /claude-learn/screenshot_10min-v1-960.jpg 960w, /claude-learn/screenshot_10min-v1-1280.jpg 1280w"
-        src="/claude-learn/screenshot_10min-v1-960.jpg"
+        srcSet="/claude-learn/PLAY_screenshot_03_ai_practice-640.jpg 640w, /claude-learn/PLAY_screenshot_03_ai_practice-960.jpg 960w, /claude-learn/PLAY_screenshot_03_ai_practice-1280.jpg 1280w"
+        src="/claude-learn/PLAY_screenshot_03_ai_practice-960.jpg"
       />
     </picture>
   );
