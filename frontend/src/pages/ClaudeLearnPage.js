@@ -18,8 +18,8 @@ const ClaudeLearnPage = () => {
         eyebrow="Latest project · Now on Google Play"
         title="Ten By Ninety - Learn AI Mastery."
         blurb="AI tutoring powered by Anthropic's Claude. A focused, conversational tutor that meets every learner where they are — and walks them toward mastery, one explanation at a time."
-        image="https://images.unsplash.com/photo-1655720828018-edd2daec9349?auto=format&fit=crop&w=1400&q=80"
-        imageAlt="Soft, modern AI / learning illustration"
+        image="/claude-learn/feature-1280.jpg"
+        imageAlt="Ten by Ninety — ten minutes a day, ninety days, real AI fluency"
         testId="claude-learn-banner"
       />
       <ClaudeLearnFeature embedded />
