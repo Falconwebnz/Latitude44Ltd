@@ -27,10 +27,11 @@ import GooglePlayBadge from "./GooglePlayBadge";
 const PROMOS = [
   {
     id: "feature",
-    label: "Launch graphic",
+    label: "Ten by Ninety",
     short: "Ten by Ninety",
     name: "feature",
-    orientation: "landscape", // from feature_1024x500.png (1488 × 720)
+    file: "feature_1024x500.png",
+    orientation: "landscape", // 1488 × 720
     aspect: 1488 / 720,
     widths: [960, 1280, 1488],
     alt: "Latitude44 · Ten by Ninety — ten minutes a day, ninety days, real AI fluency",
@@ -40,6 +41,7 @@ const PROMOS = [
     label: "Ten minutes a day · Ninety days",
     short: "10 min · 90 days",
     name: "PLAY_screenshot_01_hero_ten_minutes",
+    file: "PLAY_screenshot_01_hero_ten_minutes.png",
     orientation: "portrait", // 1080 × 1920
     aspect: 1080 / 1920,
     widths: [640, 960, 1080],
@@ -50,6 +52,7 @@ const PROMOS = [
     label: "AI practice · Inside the app",
     short: "AI practice",
     name: "PLAY_screenshot_03_ai_practice",
+    file: "PLAY_screenshot_03_ai_practice.png",
     orientation: "portrait",
     aspect: 1080 / 1920,
     widths: [640, 960, 1080],
@@ -315,8 +318,9 @@ const ClaudeLearnGallery = () => {
         <div
           className="relative w-full"
           style={{
-            aspectRatio: slide.orientation === "portrait" ? "10 / 12" : "16 / 9",
-            maxHeight: slide.orientation === "portrait" ? "min(70vh, 720px)" : undefined,
+            // Match the source art so object-contain fills the frame without cropping.
+            aspectRatio: slide.orientation === "portrait" ? "10 / 12" : `${slide.aspect}`,
+            maxHeight: slide.orientation === "portrait" ? "min(70vh, 720px)" : "min(56vh, 560px)",
             transition: "aspect-ratio 350ms ease",
           }}
         >
@@ -439,43 +443,23 @@ const ClaudeLearnGallery = () => {
 };
 
 /* ──────────────────────────────────────────────────────────────
-   <GalleryImage /> — responsive <picture> with WebP + JPG fallback.
-   Files live in /claude-learn/ as `{name}-{width}.webp|.jpg`.
-   `thumb` = letter-box (object-contain) to keep full image visible.
-   Active landscape stage uses object-cover; portraits stay contain.
+   <GalleryImage /> — load the original Play Store PNGs directly.
+   object-contain keeps the full artwork inside the frame.
    ────────────────────────────────────────────────────────────── */
-const GalleryImage = ({ slide, thumb = false, sizes }) => {
-  const base = `/claude-learn/${slide.name}`;
-  const ws = slide.widths;
-  const fallbackWidth = ws.includes(1280) ? 1280 : ws[ws.length - 1];
-  const computedSizes =
-    sizes ||
-    (slide.orientation === "portrait"
-      ? "(max-width: 1024px) 80vw, 480px"
-      : "(max-width: 1024px) 92vw, 720px");
+const GalleryImage = ({ slide, thumb = false }) => {
+  const pngSrc = `/claude-learn/${slide.file}`;
   const fitClass = thumb
-    ? "absolute inset-0 h-full w-full object-contain p-1"
-    : slide.orientation === "portrait"
-    ? "absolute inset-0 h-full w-full object-contain"
-    : "absolute inset-0 h-full w-full object-cover";
+    ? "absolute inset-0 h-full w-full object-contain p-1.5"
+    : "absolute inset-0 h-full w-full object-contain p-2 sm:p-3";
 
   return (
-    <picture>
-      <source
-        type="image/webp"
-        srcSet={ws.map((w) => `${base}-${w}.webp ${w}w`).join(", ")}
-        sizes={computedSizes}
-      />
-      <img
-        src={`${base}-${fallbackWidth}.jpg`}
-        srcSet={ws.map((w) => `${base}-${w}.jpg ${w}w`).join(", ")}
-        sizes={computedSizes}
-        alt={thumb ? "" : slide.alt}
-        loading={thumb ? "lazy" : "eager"}
-        decoding="async"
-        className={fitClass}
-      />
-    </picture>
+    <img
+      src={pngSrc}
+      alt={thumb ? "" : slide.alt}
+      loading={thumb ? "lazy" : "eager"}
+      decoding="async"
+      className={fitClass}
+    />
   );
 };
 
