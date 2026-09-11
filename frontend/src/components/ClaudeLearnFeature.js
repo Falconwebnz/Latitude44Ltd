@@ -30,7 +30,7 @@ const PROMOS = [
     label: "Launch graphic",
     short: "Ten by Ninety",
     name: "feature",
-    orientation: "landscape", // 1488 × 720
+    orientation: "landscape", // from feature_1024x500.png (1488 × 720)
     aspect: 1488 / 720,
     widths: [960, 1280, 1488],
     alt: "Latitude44 · Ten by Ninety — ten minutes a day, ninety days, real AI fluency",
@@ -46,16 +46,6 @@ const PROMOS = [
     alt: "Ten by Ninety welcome screen — ten minutes a day, ninety days of real AI practice",
   },
   {
-    id: "steps",
-    label: "Show. Tell. Do. Check.",
-    short: "Four steps",
-    name: "PLAY_screenshot_02_four_steps",
-    orientation: "portrait",
-    aspect: 1080 / 1920,
-    widths: [640, 960, 1080],
-    alt: "Ten by Ninety lesson rhythm — Show, Tell, Do, Check",
-  },
-  {
     id: "practice",
     label: "AI practice · Inside the app",
     short: "AI practice",
@@ -64,36 +54,6 @@ const PROMOS = [
     aspect: 1080 / 1920,
     widths: [640, 960, 1080],
     alt: "Ten by Ninety in-app AI practice — ask, paste and iterate without leaving the lesson",
-  },
-  {
-    id: "check",
-    label: "Real knowledge checks",
-    short: "Knowledge check",
-    name: "PLAY_screenshot_04_knowledge_check",
-    orientation: "portrait",
-    aspect: 1080 / 1920,
-    widths: [640, 960, 1080],
-    alt: "Ten by Ninety knowledge check — prove you learned it before tomorrow's lesson",
-  },
-  {
-    id: "pricing",
-    label: "Five days free",
-    short: "Five days free",
-    name: "PLAY_screenshot_05_five_days_free",
-    orientation: "portrait",
-    aspect: 1080 / 1920,
-    widths: [640, 960, 1080],
-    alt: "Ten by Ninety pricing — five days free, then $2.99 a month",
-  },
-  {
-    id: "references",
-    label: "References you can check",
-    short: "References",
-    name: "PLAY_screenshot_06_references",
-    orientation: "portrait",
-    aspect: 1080 / 1920,
-    widths: [640, 960, 1080],
-    alt: "Ten by Ninety references — independent daily-practice app by Latitude44",
   },
 ];
 
@@ -437,7 +397,7 @@ const ClaudeLearnGallery = () => {
       </div>
 
       {/* Thumbnail rail — equal aspect for visual balance */}
-      <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-2 sm:gap-3">
+      <div className="grid grid-cols-3 gap-2 sm:gap-3">
         {PROMOS.map((p, i) => (
           <button
             key={p.id}
