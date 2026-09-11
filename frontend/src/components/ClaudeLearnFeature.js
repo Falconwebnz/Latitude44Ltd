@@ -27,33 +27,36 @@ import GooglePlayBadge from "./GooglePlayBadge";
 const PROMOS = [
   {
     id: "feature",
-    label: "Launch graphic",
-    short: "Ten By Ninety : Learn AI",
-    name: "feature_graphic",
-    orientation: "landscape", // 1024 × 500 → ~2.05:1
-    aspect: 1024 / 500,
-    widths: [960, 1280, 1600],
-    alt: "Latitude44 · Ten By Ninety — Master Claude AI launch graphic",
+    label: "Ten by Ninety",
+    short: "Ten by Ninety",
+    name: "feature",
+    file: "feature_1024x500.png",
+    orientation: "landscape", // 1488 × 720
+    aspect: 1488 / 720,
+    widths: [960, 1280, 1488],
+    alt: "Latitude44 · Ten by Ninety — ten minutes a day, ninety days, real AI fluency",
   },
   {
-    id: "work",
-    label: "Work alongside Claude.ai",
-    short: "Pair with Claude.ai",
-    name: "screenshot_work",
+    id: "hero",
+    label: "Ten minutes a day · Ninety days",
+    short: "10 min · 90 days",
+    name: "PLAY_screenshot_01_hero_ten_minutes",
+    file: "PLAY_screenshot_01_hero_ten_minutes.png",
     orientation: "portrait", // 1080 × 1920
     aspect: 1080 / 1920,
-    widths: [640, 960, 1280],
-    alt: "Claude Learn screen — Work alongside Claude.ai with daily practice",
+    widths: [640, 960, 1080],
+    alt: "Ten by Ninety welcome screen — ten minutes a day, ninety days of real AI practice",
   },
   {
-    id: "tenmin",
-    label: "10 minutes a day · 90 days",
-    short: "10 min a day · 90 days",
-    name: "screenshot_10min",
+    id: "practice",
+    label: "AI practice · Inside the app",
+    short: "AI practice",
+    name: "PLAY_screenshot_03_ai_practice",
+    file: "PLAY_screenshot_03_ai_practice.png",
     orientation: "portrait",
     aspect: 1080 / 1920,
-    widths: [640, 960, 1280],
-    alt: "Claude Learn screen — 10 minutes a day, 90 days to Claude",
+    widths: [640, 960, 1080],
+    alt: "Ten by Ninety in-app AI practice — ask, paste and iterate without leaving the lesson",
   },
 ];
 
@@ -315,8 +318,9 @@ const ClaudeLearnGallery = () => {
         <div
           className="relative w-full"
           style={{
-            aspectRatio: slide.orientation === "portrait" ? "10 / 12" : "16 / 9",
-            maxHeight: slide.orientation === "portrait" ? "min(70vh, 720px)" : undefined,
+            // Match the source art so object-contain fills the frame without cropping.
+            aspectRatio: slide.orientation === "portrait" ? "10 / 12" : `${slide.aspect}`,
+            maxHeight: slide.orientation === "portrait" ? "min(70vh, 720px)" : "min(56vh, 560px)",
             transition: "aspect-ratio 350ms ease",
           }}
         >
@@ -439,71 +443,23 @@ const ClaudeLearnGallery = () => {
 };
 
 /* ──────────────────────────────────────────────────────────────
-   <GalleryImage /> — responsive <picture> with WebP + JPG fallback.
-   `thumb` = letter-box (object-contain) to keep full image visible.
-   Active stage frame uses object-cover for an edge-to-edge hero.
+   <GalleryImage /> — load the original Play Store PNGs directly.
+   object-contain keeps the full artwork inside the frame.
    ────────────────────────────────────────────────────────────── */
-// Special-case the main feature image to use WebP/JPG srcset variants
-const GalleryImage = ({ slide, thumb = false, sizes }) => {
-  const isFeature = slide.name === "feature_graphic";
-
-  if (isFeature) {
-    // filenames (placed in /claude-learn/):
-    // feature-960.webp, feature-1280.webp, feature-1600.webp
-    // feature-960.jpg, feature-1280.jpg, feature-1600.jpg
-    const ws = [960, 1280, 1600];
-    const webpSrcSet = ws.map((w) => `/claude-learn/feature-${w}.webp ${w}w`).join(", ");
-    const jpgSrcSet = ws.map((w) => `/claude-learn/feature-${w}.jpg ${w}w`).join(", ");
-    const fitClass = thumb
-      ? "absolute inset-0 h-full w-full object-contain p-1"
-      : "absolute inset-0 h-full w-full object-cover";
-    const computedSizes = sizes || "(max-width: 1024px) 92vw, 720px";
-
-    return (
-      <picture>
-        <source type="image/webp" srcSet={webpSrcSet} sizes={computedSizes} />
-        <img
-          src="/claude-learn/feature-1280.jpg"
-          srcSet={jpgSrcSet}
-          sizes={computedSizes}
-          alt={thumb ? "" : slide.alt}
-          loading={thumb ? "lazy" : "eager"}
-          decoding="async"
-          className={fitClass}
-        />
-      </picture>
-    );
-  }
-
-  const base = `/claude-learn/${slide.name}-v1`;
-  const ws = slide.widths;
-  const computedSizes =
-    sizes ||
-    (slide.orientation === "portrait"
-      ? "(max-width: 1024px) 80vw, 480px"
-      : "(max-width: 1024px) 92vw, 720px");
+const GalleryImage = ({ slide, thumb = false }) => {
+  const pngSrc = `/claude-learn/${slide.file}`;
   const fitClass = thumb
-    ? "absolute inset-0 h-full w-full object-contain p-1"
-    : slide.orientation === "portrait"
-    ? "absolute inset-0 h-full w-full object-contain"
-    : "absolute inset-0 h-full w-full object-cover";
+    ? "absolute inset-0 h-full w-full object-contain p-1.5"
+    : "absolute inset-0 h-full w-full object-contain px-12 py-3 sm:px-14 sm:py-4";
+
   return (
-    <picture>
-      <source
-        type="image/webp"
-        srcSet={ws.map((w) => `${base}-${w}.webp ${w}w`).join(", ")}
-        sizes={computedSizes}
-      />
-      <img
-        sizes="(max-width: 1024px) 80vw, 480px"
-        alt={thumb ? "" : slide.alt}
-        loading={thumb ? "lazy" : "eager"}
-        decoding="async"
-        className={fitClass}
-        srcSet="/claude-learn/PLAY_screenshot_03_ai_practice-640.jpg 640w, /claude-learn/PLAY_screenshot_03_ai_practice-960.jpg 960w, /claude-learn/PLAY_screenshot_03_ai_practice-1280.jpg 1280w"
-        src="/claude-learn/PLAY_screenshot_03_ai_practice-960.jpg"
-      />
-    </picture>
+    <img
+      src={pngSrc}
+      alt={thumb ? "" : slide.alt}
+      loading={thumb ? "lazy" : "eager"}
+      decoding="async"
+      className={fitClass}
+    />
   );
 };
 
