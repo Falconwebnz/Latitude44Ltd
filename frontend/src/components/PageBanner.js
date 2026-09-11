@@ -23,6 +23,7 @@ const PageBanner = ({
   blurb,
   image,
   imageAlt = "",
+  imageFit = "cover",
   align = "left",
   testId = "page-banner",
   children,
@@ -94,7 +95,11 @@ const PageBanner = ({
                   alt={imageAlt}
                   loading="eager"
                   decoding="async"
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className={
+                    imageFit === "contain"
+                      ? "absolute inset-0 h-full w-full object-contain p-3"
+                      : "absolute inset-0 h-full w-full object-cover"
+                  }
                 />
                 {/* subtle navy veil for legibility & brand cohesion */}
                 <div
