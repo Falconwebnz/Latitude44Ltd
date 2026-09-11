@@ -450,7 +450,7 @@ const GalleryImage = ({ slide, thumb = false }) => {
   const pngSrc = `/claude-learn/${slide.file}`;
   const fitClass = thumb
     ? "absolute inset-0 h-full w-full object-contain p-1.5"
-    : "absolute inset-0 h-full w-full object-contain p-2 sm:p-3";
+    : "absolute inset-0 h-full w-full object-contain px-12 py-3 sm:px-14 sm:py-4";
 
   return (
     <img
